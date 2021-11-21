@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ANB-q2-BmM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--GCD Tasks-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SimpleDownloadTasks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ECr-8A-sXF">
+                                <rect key="frame" x="0.0" y="104" width="414" height="792"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ifg-6W-yQi">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="395.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Fie-cY-jzt">
+                                        <rect key="frame" x="0.0" y="396.5" width="414" height="395.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ifg-6W-yQi" secondAttribute="trailing" id="3XZ-nE-7eg"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fie-cY-jzt" secondAttribute="trailing" id="53D-1a-DzL"/>
+                                    <constraint firstItem="Fie-cY-jzt" firstAttribute="leading" secondItem="ECr-8A-sXF" secondAttribute="leading" id="B9W-MD-qvM"/>
+                                    <constraint firstItem="Fie-cY-jzt" firstAttribute="top" secondItem="ifg-6W-yQi" secondAttribute="bottom" constant="1" id="Xmc-c1-WuL"/>
+                                    <constraint firstItem="ifg-6W-yQi" firstAttribute="height" secondItem="Fie-cY-jzt" secondAttribute="height" id="ZDE-P3-zfc"/>
+                                    <constraint firstItem="ifg-6W-yQi" firstAttribute="leading" secondItem="ECr-8A-sXF" secondAttribute="leading" id="tPz-Gg-Z8Q"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fie-cY-jzt" secondAttribute="bottom" id="yxb-xw-saS"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ECr-8A-sXF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6i6-wD-uzh"/>
+                            <constraint firstItem="ECr-8A-sXF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9PD-ks-CJq"/>
+                            <constraint firstItem="ECr-8A-sXF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="D1Z-Fv-bbG"/>
+                            <constraint firstAttribute="bottom" secondItem="ECr-8A-sXF" secondAttribute="bottom" id="Esg-OR-wbn"/>
+                            <constraint firstItem="ECr-8A-sXF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Qxn-3l-xs8"/>
+                            <constraint firstItem="ECr-8A-sXF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oNm-fM-aXR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="GCD Tasks" id="Rvv-iC-fx9">
+                        <barButtonItem key="rightBarButtonItem" title="Start" id="iT8-0C-pKr">
+                            <connections>
+                                <action selector="startTasks:" destination="BYZ-38-t0r" id="QQR-eI-zct"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="completedTableView" destination="Fie-cY-jzt" id="njm-qp-I1e"/>
+                        <outlet property="downloadsTableView" destination="ifg-6W-yQi" id="2zg-tJ-oDw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868.11594202898561" y="-37.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aQA-sL-wMJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ANB-q2-BmM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="M1y-3E-UZp">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KEe-Jv-ewg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3dJ-VZ-vHt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-42.028985507246382" y="-37.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
